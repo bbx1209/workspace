@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+use_frameworks!
+
+workspace 'Demo.xcworkspace'
+
+# 主工程
+project 'Demo.xcodeproj'
+
+target 'Demo' do
+    # 测试RFKit的demo不用暴露
+    # project './Demo.xcodeproj' 
+end
+
+target 'Framework' do
+    # RFKit把本身暴露出去给RFKitDemo，用于调试
+    project '../Framework/Framework.xcodeproj'
+   
+   
+end
+
